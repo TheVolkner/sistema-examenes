@@ -1,0 +1,47 @@
+<h1>Preguntas de {{titulo}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card *ngFor="let p of preguntas; let i = index" class="mt-2">
+        <mat-card-content>
+          <p>
+            <b>{{i + 1 + ' - '}}</b>
+            <!--OTRA FORMA DE IMPRIMIR EL CONTENIDO DE LA PREGUNTA EN EL SPAN APARTE DE INTERPOLACIÓN ES CON INNER HTML-->
+            <span class="me-2" [innerHTML]="p.contenido"></span>
+          </p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <p>1) {{p.opcion1}}</p>
+              </div>
+              <div class="col-md-6">
+                <p>2) {{p.opcion2}}</p>
+              </div>
+              <div class="col-md-6">
+                 <p>3) {{p.opcion3}}</p>
+              </div>
+              <div class="col-md-6">
+                <p>4) {{p.opcion4}}</p>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <p class="mt-2">
+              <b>Respuesta correcta: {{p.respuesta}}</b>
+            </p>
+            <mat-divider></mat-divider>
+            <button mat-raised-button color="primary" class="mt-2 me-2" [routerLink]="['/admin/preguntas',p.pregunta_id,id_examen,titulo]">Actualizar</button>
+            <button mat-raised-button color="warn" class="mt-2" (click)="eliminarPregunta(p.pregunta_id)">Eliminar</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center ">
+      <button mat-raised-button color="primary" class="mt-2" [routerLink]="['/admin/add-pregunta',id_examen,titulo]">Agregar Pregunta</button>
+      <button mat-raised-button color="primary" class="mt-2 ms-2" [routerLink]="['/admin/examenes']">Regresar</button>
+    </div>
+  </div>
+</div>

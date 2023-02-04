@@ -1,0 +1,59 @@
+<mat-card>
+  <h1>Detalles de perfil</h1>
+  <mat-card-content>
+    <div class="container w-75">
+      <div class="row">
+        <div class="col-12 text-center">
+          <img
+            src="../../../assets/personas.png"
+            alt="Foto Perfil"
+            class="img w-25 mb-2"
+          />
+          <h1 class="mt-2">{{usuario.nombre}} {{usuario.apellido}}</h1>
+        </div>
+        <div class="col-12">
+          <table
+            class="table table-secondary table-bordered table-hover fs-5 text-center mx-auto"
+          >
+            <tbody>
+              <tr>
+                <th>Nombre de Usuario</th>
+                <td>{{usuario.username}}</td>
+              </tr>
+              <tr>
+                <th>ID</th>
+                <td>{{usuario.id}}</td>
+              </tr>
+              <tr>
+                <th>Teléfono</th>
+                <td>{{usuario.telefono}}</td>
+              </tr>
+              <tr>
+                <th>Rol</th>
+                <td>{{LoggedUser.authorities[0].authority}}</td>
+              </tr>
+              <tr>
+                <th>Estado</th>
+                <td>
+                  <div *ngIf="usuario.enabled == 1; then thenBlock else elseBlock"></div>
+                  <ng-template #thenBlock>Activo</ng-template>
+                  <ng-template #elseBlock>Inactivo</ng-template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 text-center">
+          <mat-card-actions>
+            <button mat-raised-button color="primary" class="ms-auto">
+              Actualizar
+            </button>
+            <button mat-raised-button color="accent" class="mx-auto">
+              Compartir
+            </button>
+          </mat-card-actions>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

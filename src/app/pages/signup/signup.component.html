@@ -1,0 +1,94 @@
+<!--ESTILOS CON BOOTSTRAP-->
+<div class="bootstrap-wrapper">
+  <div class="container mt-5 w-75">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <!--HEADER DE FORMULARIO CON FOTO DE PERFIL-->
+        <div class="container text-center">
+          <img
+            src="../../../assets/perfil.png"
+            class="img-fluid w-25"
+            alt="FotoDePerfil.png"
+          />
+        </div>
+        <h1 class="text-center"> <p class="fw-bolder fs-4"> Registrate aquí</p></h1>
+      </div>
+    </div>
+    <form #f="ngForm" (ngSubmit)="f.form.valid && validarForm(f)">
+      <div class="row">
+        <!--FORMULARIO PARA REGISTRAR USUARIO-->
+        <!--TRABAJAR CON GRID PARA INDICARLE TAMAÑO RESPONSIVE A CADA COLUMNA, COMENZANDO POR EL DISEÑO MOBILE FIRST,
+        CADA COLUMNA CUBRE LOS 12 ESPACIOS PARA CADA ELEMENTO, Y LUEGO EN EL BREAKPOINT DE MEDIUM, LO DIVIDIMOS DE A 2 ELEMENTOS
+        CADA 6 ESPACIOS-->
+        <div class="col-12 col-md-6 text-center">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Usuario</mat-label>
+              <input matInput required [(ngModel)]="username" name="username" placeholder="Indique su usuario..." />
+              <mat-hint>El username debe ser único.</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Contraseña</mat-label>
+              <input
+                type="password"
+                minlength="6"
+                maxlength="16"
+                matInput required [(ngModel)]="password" name="password"
+                placeholder="Indique su contraseña..."
+              />
+              <mat-hint>La contraseña debe tener entre 6 y 16 carácteres.</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+          <p>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Nombre</mat-label>
+              <input matInput [(ngModel)]="nombre" name="nombre" required placeholder="Indique su nombre..." />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <p>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Apellido</mat-label>
+              <input matInput [(ngModel)]="apellido" name="apellido" required placeholder="Indique su apellido..." />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <p>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input type="email"
+              pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+              [(ngModel)]="email"
+              name="email"
+              required
+              matInput
+              placeholder="Indique su email" />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <p>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Teléfono</mat-label>
+              <input
+                type="text"
+                matInput required [(ngModel)]="telefono" name="telefono"
+                placeholder="Digite su teléfono..."
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 d-grid gap-2 mx-auto">
+          <button mat-raised-button  (click)="checkForm(f)" color="primary">Registrar</button>
+        </div>
+        <div class="col-12 col-md-6 d-grid gap-2 mx-auto my-4 my-md-0">
+          <button mat-raised-button  color="accent" type="reset">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

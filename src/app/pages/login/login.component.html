@@ -1,0 +1,77 @@
+<!--ESTILOS CON BOOTSTRAP-->
+
+<div class="container mt-1">
+  <div class="row">
+    <div class="col-12 text-center fw-bold">
+      <h1 class="text-center"> <p class="fw-bolder fs-4"> Inicia Sesión</p></h1>
+    </div>
+    <div class="col-12 text-center mx-auto">
+      <!--HEADER DE FORMULARIO CON FOTO DE PERFIL-->
+      <img
+        src="../../../assets/tableta-grafica.png"
+        class="img-fluid mb-3"
+        alt="FotoDePerfil.png"
+        height="150"
+        width="150"
+      />
+      <form #f="ngForm" (ngSubmit)="f.form.valid && validarForm(f)">
+        <!--FORMULARIO PARA REGISTRAR USUARIO-->
+        <!--TRABAJAR CON GRID PARA INDICARLE TAMAÑO RESPONSIVE A CADA COLUMNA, COMENZANDO POR EL DISEÑO MOBILE FIRST,
+          CADA COLUMNA CUBRE LOS 12 ESPACIOS PARA CADA ELEMENTO, Y LUEGO EN EL BREAKPOINT DE MEDIUM, LO DIVIDIMOS DE A 2 ELEMENTOS
+          CADA 6 ESPACIOS-->
+
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field appearance="outline" class="w-50">
+              <mat-label>Usuario</mat-label>
+              <input
+                matInput
+                required
+                [(ngModel)]="username"
+                name="username"
+                placeholder="Indique su usuario..."
+              />
+              <mat-hint>El username debe ser único.</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-form-field appearance="outline" class="w-50">
+              <mat-label>Contraseña</mat-label>
+              <input
+                type="password"
+                minlength="6"
+                maxlength="16"
+                matInput
+                required
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Indique su contraseña..."
+              />
+              <mat-hint
+                >La contraseña debe tener entre 6 y 16 carácteres.</mat-hint
+              >
+            </mat-form-field>
+          </div>
+          <div class="mx-auto w-50">
+            <div class="col-12 mt-5 d-grid gap-2">
+              <button mat-raised-button (click)="checkForm(f)" color="primary"  class="p-4 mb-2">
+                Iniciar Sesión
+              </button>
+            </div>
+              <div class="col-12 my-2 text-center d-grid gap-2">
+                <button
+                class="p-4"
+                  mat-raised-button
+                  color="accent"
+                  type="button"
+                  routerLink="/signup"
+                >
+                  ¿No tienes una cuenta? ¡Registrate aquí!
+                </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

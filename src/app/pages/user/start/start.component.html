@@ -1,0 +1,110 @@
+<div class="container-fluid" *ngIf="enviado == false">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Instrucciones-->
+      <mat-card class="mt-2">
+      <mat-card-content>
+        <h3>
+          <b>
+            Instrucciones
+          </b>
+        </h3>
+        <li>No actualice la pagína, de lo contrario obtendrá nuevas preguntas en este cuestionario</li>
+        <li>No cambies las pestañas</li>
+        <li>No minimices la ventana</li>
+      </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-8">
+      <!--Preguntas-->
+      <ng-container *ngIf="preguntas">
+        <h1 class="mt-2">
+          En curso <b>{{ preguntas[0].examen.titulo }}</b>
+        </h1>
+      </ng-container>
+
+      <mat-card *ngFor="let pregunta of preguntas; let i = index">
+        <mat-card-content>
+          <p>
+            <b>{{ i + 1 }}) </b
+            ><span [innerHTML]="pregunta.contenido">{{
+              pregunta.opcion1
+            }}</span>
+          </p>
+          <mat-divider></mat-divider>
+          <div class="row mt-2">
+            <div class="col-md-7 mt-2">
+              <!--CUANDO ESTEMOS ITERANDO LAS PREGUNTAS, VINCULAMOS LOS RADIO BUTTON POR SU NOMBRE QUE ES EL INDICE
+              ITERADO EN ESTA VUELTA, Y LE ASIGNAMOS A CADA UNA EL VALOR DE LA OPCIÓN-->
+              <input type="radio" class="me-1" name={{i}} [(ngModel)]="pregunta.respuestaDada"  [value]="pregunta.opcion1" />{{
+                pregunta.opcion1
+              }}
+            </div>
+            <div class="col-md-7 mt-2">
+              <input type="radio"  class="me-1"  name={{i}} [(ngModel)]="pregunta.respuestaDada" [value]="pregunta.opcion2" />{{
+                pregunta.opcion2
+              }}
+            </div>
+            <div class="col-md-7 mt-2">
+              <input type="radio" class="me-1"  name={{i}} [(ngModel)]="pregunta.respuestaDada" [value]="pregunta.opcion3" />{{
+                pregunta.opcion3
+              }}
+            </div>
+            <div class="col-md-7 mt-2">
+              <input type="radio"  class="me-1" name={{i}} [(ngModel)]="pregunta.respuestaDada" [value]="pregunta.opcion4" />{{
+                pregunta.opcion4
+              }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6"></div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="container text-center my-2">
+        <button mat-raised-button color="primary" (click)="enviarCuestionario()">Enviar Cuestionario</button>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <!--BARRA DE PROGRESO-->
+      <mat-card class="mt-5">
+         <mat-card-header>
+          <mat-card-title>
+            Progreso
+          </mat-card-title>
+          <mat-card-subtitle class="mb-2">
+            El cuestionario se enviará automáticamente cuando el temporizador termine.
+          </mat-card-subtitle>
+         </mat-card-header>
+         <mat-card-content>
+          <h1 class="text-center">{{obtenerHoraFormateada()}}</h1>
+          <!--EL VALOR DEL SPINNER TIENE QUE SER A BASE 100, ENTONCES CON EL ALGORIMO INDICADO ABAJO REALIZAMOS ESA OPERACIÓN-->
+          <mat-progress-spinner mode="determinate" class="mx-auto" [value]="(timer/(preguntas.length * 2 * 60) * 100)"></mat-progress-spinner>
+         </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+</div>
+<div class="container-fluid" *ngIf="enviado == true">
+  <div class="row mt-2">
+    <div class="col-md-6 offset-md-3">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title class="mb-2">
+            Resultado de la prueba
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="text-center">
+         <h1>Puntos conseguidos: {{puntosConseguidos | number:'1.0-1'}}</h1>
+         <h1>Respuestas correctas: {{respuestasCorrectas}}</h1>
+        </mat-card-content>
+        <mat-card-actions class="mx-auto mt-2">
+         <button mat-raised-button (click)="imprimirPagina()" color="primary">Imprimir</button>
+         <button mat-raised-button color="accent" class="ms-2" [routerLink]="['/user-dashboard/categoria/0']">Inicio</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

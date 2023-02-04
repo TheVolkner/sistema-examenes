@@ -1,0 +1,39 @@
+<nav>
+    <p>
+      <mat-toolbar color="primary">
+        <mat-icon aria-hidden="false" class="me-2" aria-label="Example home icon" fontIcon="menu_books"></mat-icon>
+        <span>Sistema de Examenes</span>
+        <span class="mx-5">
+          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          <a routerLink="/"  mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Inicio</a>
+        </span>
+        <div class="ms-auto">
+          <span *ngIf="loginService.isLoggedin()">
+            <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="person"></mat-icon>
+            <button
+            *ngIf = "isLoggedIn && user"
+            mat-button
+            style="margin-right: 10px"
+            class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon"
+            [routerLink] = "'/admin/profile'"
+          >
+            {{ user.username }}
+          </button>
+          </span>
+        <span class="ms-5" *ngIf="!loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="input"></mat-icon>
+          <a routerLink="/signup" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Registrarse</a>
+        </span>
+        <span *ngIf="!loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="login"></mat-icon>
+          <a routerLink="/login" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Iniciar Sesión</a>
+        </span>
+        <span *ngIf="loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="login"></mat-icon>
+          <a (click)="logout()" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Cerrar Sesión</a>
+        </span>
+      </div>
+      </mat-toolbar>
+    </p>
+</nav>
