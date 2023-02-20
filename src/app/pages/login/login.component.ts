@@ -1,3 +1,4 @@
+
 import { Token } from './../../models/Token.model';
 import { LoginService } from './../../services/login.service';
 import { UserService } from './../../services/user.service';
@@ -18,6 +19,9 @@ export class LoginComponent {
   //CREAMOS LOS ATRIBUTOS VINCULADOS CON LOS CAMPOS DEL FORMULARIO
   username: String;
   password: String;
+
+  //MENSAJE DE ERROR
+  errorMsg: any;
 
   //INYECTAMOS EL SERVICIO DE USER SERVICES, EL SNACK BAR PARA LAS ALERTAS, EL LOGIN SERVICE
   //Y EL ROUTER PARA NAVEGAR ENTRE RUTAS DEL APP-ROUTING
@@ -58,9 +62,9 @@ export class LoginComponent {
           }
         });
       },
-      (error) => {
+      (errorHandler) => {
         this.matSnackBar.open(
-          '¡Ha ocurrido un error en el sistema al iniciar sesión!',
+          errorHandler.error.mensaje,
           'Aceptar',
           {
             duration: 3000,
@@ -68,7 +72,6 @@ export class LoginComponent {
             horizontalPosition: 'left',
           }
         );
-        console.log(error);
       }
     );
   }

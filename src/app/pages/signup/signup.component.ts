@@ -36,13 +36,12 @@ export class SignupComponent {
         'success');
         console.log(data);
       },
-      (error) => {
-        this.matSnackBar.open('¡Ha ocurrido un error en el sistema!','Aceptar',{
+      (errorHandler) => {
+        this.matSnackBar.open(errorHandler.error.mensaje,'Aceptar',{
           duration:3000,
           verticalPosition: 'top',
           horizontalPosition: 'left'
         });
-        console.log(error);
       }
     )
   }
