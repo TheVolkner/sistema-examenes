@@ -62,11 +62,11 @@
           </div>
         </mat-card-content>
       </mat-card>
-      <div class="container text-center my-2">
-        <button mat-raised-button color="primary" (click)="enviarCuestionario()">Enviar Cuestionario</button>
+      <div class="container text-center mt-2 mb-md-5">
+        <button mat-raised-button color="primary" class="mb-5" (click)="enviarCuestionario()">Enviar Cuestionario</button>
       </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 mb-5 mt-0">
       <!--BARRA DE PROGRESO-->
       <mat-card class="mt-5">
          <mat-card-header>
@@ -80,7 +80,7 @@
          <mat-card-content>
           <h1 class="text-center">{{obtenerHoraFormateada()}}</h1>
           <!--EL VALOR DEL SPINNER TIENE QUE SER A BASE 100, ENTONCES CON EL ALGORIMO INDICADO ABAJO REALIZAMOS ESA OPERACIÓN-->
-          <mat-progress-spinner mode="determinate" class="mx-auto" [value]="(timer/(preguntas.length * 2 * 60) * 100)"></mat-progress-spinner>
+          <mat-progress-spinner mode="determinate" class="mx-auto mb-5" [value]="(timer/(preguntas.length * 2 * 60) * 100)"></mat-progress-spinner>
          </mat-card-content>
       </mat-card>
 

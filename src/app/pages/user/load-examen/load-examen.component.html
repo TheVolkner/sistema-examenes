@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid mb-5">
   <h1>Examenes disponibles:</h1>
   <div class="row mt-2" *ngIf="examenes">
       <div class="col-md-6" *ngFor="let e of examenes">
         <!--CADA EXÁMEN SE COMPRUEBA SI ESTÁ ACTIVO ANTES DE DESPLEGARGLO-->
-        <mat-card class="mb-3">
+        <mat-card class="mb-5">
           <mat-card-header>
             <div mat-card-avatar>
               <img
@@ -30,7 +30,7 @@
           </mat-card-actions>
         </mat-card>
       </div>
-      <div class="col-md-12" *ngIf="examenes.length == 0">
+      <div class="col-md-12 mb-5" *ngIf="examenes.length == 0">
         <mat-card>
           <mat-card-content>
             <h4>No hay exámenes en esta categoría</h4>

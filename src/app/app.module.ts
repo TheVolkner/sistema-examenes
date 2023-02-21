@@ -56,6 +56,7 @@ import { UserSideboardComponent } from './pages/user/user-sideboard/user-sideboa
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
 import { StartComponent } from './pages/user/start/start.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 
 
@@ -83,7 +84,8 @@ import { StartComponent } from './pages/user/start/start.component';
     UserSideboardComponent,
     LoadExamenComponent,
     InstruccionesComponent,
-    StartComponent
+    StartComponent,
+    FooterComponent
 
   ],
   imports: [

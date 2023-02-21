@@ -11,17 +11,17 @@
     <mat-card-content>
       <mat-card-actions>
         <button mat-flat-button color="primary" [routerLink]="['../ver-preguntas',e.id_examen,e.titulo]">Preguntas</button>
-        <button mat-stroked-button color="primary" class="ms-2">Puntos Máximos {{e.puntos_maximos}}</button>
+        <button mat-stroked-button color="primary" class="ms-2">P.M {{e.puntos_maximos}}</button>
         <button mat-stroked-button color="primary" class="ms-2">Preguntas {{e.numero_de_preguntas}}</button>
-        <button mat-flat-button color="primary" [routerLink]="['../examen', e.id_examen]" class="ms-2">Actualizar</button>
+        <button mat-flat-button color="primary" [routerLink]="['../examen', e.id_examen]" class="ms-2">Cambiar</button>
         <button mat-flat-button color="primary" class="ms-2">Intentos</button>
-        <button mat-flat-button color="warn" class="ms-2" (click)="eliminarExamen(e.id_examen)">Eliminar Cuestionario </button>
+        <button mat-flat-button color="warn" class="ms-2" (click)="eliminarExamen(e.id_examen)">Eliminar </button>
 
       </mat-card-actions>
     </mat-card-content>
 </mat-card>
 
-<div class="container text-center mt-2">
+<div class="container text-center mt-2 mb-5">
 
-  <button mat-raised-button color="primary" routerLink="/admin/add-examen">Agregar Cuestionario</button>
+  <button mat-raised-button color="primary" class="mb-5" routerLink="/admin/add-examen">Agregar Cuestionario</button>
 </div>

@@ -81,9 +81,9 @@
               </mat-select>
               <mat-hint>¡Recuerde llenar los campos de las preguntas antes de indicar la respuesta!</mat-hint>
             </mat-form-field>
-            <div class="container text-center">
-               <button mat-raised-button color="primary" (click)="checkForm(f)">Guardar</button>
-               <button mat-raised-button color="primary" class="ms-2" [routerLink]="['/admin/ver-preguntas',id_examen,titulo]">Regresar</button>
+            <div class="container text-center mb-5 mt-4">
+               <button mat-raised-button color="primary" class="mb-5" (click)="checkForm(f)">Guardar</button>
+               <button mat-raised-button color="primary" class="ms-2 mb-5" [routerLink]="['/admin/ver-preguntas',id_examen,titulo]">Regresar</button>
             </div>
           </div>
         </form>
