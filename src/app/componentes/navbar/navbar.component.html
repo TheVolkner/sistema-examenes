@@ -1,15 +1,25 @@
-<nav>
-    <p>
-      <mat-toolbar color="primary">
-        <mat-icon aria-hidden="false" class="me-2" aria-label="Example home icon" fontIcon="menu_books"></mat-icon>
-        <span>Sistema de Examenes</span>
-        <span class="mx-5">
-          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="home"></mat-icon>
+<nav class="navbar navbar-expand-sm p-3 navbar-color">
+  <div class="container">
+    <mat-icon aria-hidden="false" class="me-2 me-md-0 text-white" aria-label="Example home icon" fontIcon="menu_books"></mat-icon>
+    <a routerLink="/" class="navbar-brand text-white ms-2">Sistema de Exámenes</a>
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav">
+        <li class="mx-5 mx-md-2" *ngIf="loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="home"></mat-icon>
           <a routerLink="/"  mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Inicio</a>
-        </span>
-        <div class="ms-auto">
-          <span *ngIf="loginService.isLoggedin()">
-            <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="person"></mat-icon>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="ms-5" *ngIf="loginService.isLoggedin()">
+            <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="person"></mat-icon>
             <button
             *ngIf = "isLoggedIn && user"
             mat-button
@@ -18,22 +28,22 @@
             aria-label="Example icon-button with heart icon"
             [routerLink] = "'/admin/profile'"
           >
-            {{ user.username }}
+            <p class="text-white">{{ user.username }}</p>
           </button>
-          </span>
-        <span class="ms-5" *ngIf="!loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="input"></mat-icon>
+          </li>
+          <li class="ms-5" *ngIf="!loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="input"></mat-icon>
           <a routerLink="/signup" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Registrarse</a>
-        </span>
-        <span *ngIf="!loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="login"></mat-icon>
+        </li>
+        <li class="ms-5" *ngIf="!loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="login"></mat-icon>
           <a routerLink="/login" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Iniciar Sesión</a>
-        </span>
-        <span *ngIf="loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1" aria-label="Example home icon" fontIcon="login"></mat-icon>
+        </li>
+        <li class="ms-5" *ngIf="loginService.isLoggedin()">
+          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="login"></mat-icon>
           <a (click)="logout()" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Cerrar Sesión</a>
-        </span>
-      </div>
-      </mat-toolbar>
-    </p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
