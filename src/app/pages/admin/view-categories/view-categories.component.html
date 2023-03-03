@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row mb-5">
-    <div class="row mb-5">
+<main class="container">
+  <article class="row mb-5">
+    <section class="row mb-5">
       <mat-card>
         <mat-list>
           <mat-card-subtitle class="p-3"
@@ -8,7 +8,9 @@
           >
           <mat-list-item *ngFor="let c of categorias">
             <div class="mb-3">
-              <span><mat-icon class="mt-4" mat-list-icon>category</mat-icon></span>
+              <span
+                ><mat-icon class="mt-4" mat-list-icon>category</mat-icon></span
+              >
               <span mat-line class="fw-bolder ms-1">{{ c.titulo }}</span>
               <div class="pb-2">{{ c.descripcion }}</div>
               <mat-divider></mat-divider>
@@ -16,11 +18,16 @@
           </mat-list-item>
         </mat-list>
         <div class="container text-center">
-          <button routerLink="/admin/add-category"  mat-raised-button color="primary" class="mb-3">
+          <button
+            routerLink="/admin/add-category"
+            mat-raised-button
+            color="primary"
+            class="mb-3"
+          >
             Agregar Categoría
           </button>
         </div>
       </mat-card>
-    </div>
-  </div>
-</div>
+    </section>
+  </article>
+</main>

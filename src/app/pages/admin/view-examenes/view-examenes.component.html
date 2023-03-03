@@ -1,27 +1,63 @@
-<mat-card class="mt-3" *ngFor="let e of examenes">
+<main>
+  <mat-card class="mt-3" *ngFor="let e of examenes">
     <mat-card-header>
-      <img mat-card-avatar src="../../../assets/prueba.png" class="example-header-image" alt="Exam.png"/>
-        <mat-card-title>
-          {{e.titulo}}
-        </mat-card-title>
-        <mat-card-subtitle>
-          {{e.categoria.titulo}}
-        </mat-card-subtitle>
+      <img
+        mat-card-avatar
+        src="../../../assets/prueba.png"
+        class="example-header-image"
+        alt="Exam.png"
+      />
+      <mat-card-title>
+        {{ e.titulo }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ e.categoria.titulo }}
+      </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="primary" [routerLink]="['../ver-preguntas',e.id_examen,e.titulo]">Preguntas</button>
-        <button mat-stroked-button color="primary" class="ms-2">P.M {{e.puntos_maximos}}</button>
-        <button mat-stroked-button color="primary" class="ms-2">Preguntas {{e.numero_de_preguntas}}</button>
-        <button mat-flat-button color="primary" [routerLink]="['../examen', e.id_examen]" class="ms-2">Cambiar</button>
+        <button
+          mat-flat-button
+          color="primary"
+          [routerLink]="['../ver-preguntas', e.id_examen, e.titulo]"
+        >
+          Preguntas
+        </button>
+        <button mat-stroked-button color="primary" class="ms-2">
+          P.M {{ e.puntos_maximos }}
+        </button>
+        <button mat-stroked-button color="primary" class="ms-2">
+          Preguntas {{ e.numero_de_preguntas }}
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          [routerLink]="['../examen', e.id_examen]"
+          class="ms-2"
+        >
+          Cambiar
+        </button>
         <button mat-flat-button color="primary" class="ms-2">Intentos</button>
-        <button mat-flat-button color="warn" class="ms-2" (click)="eliminarExamen(e.id_examen)">Eliminar </button>
-
+        <button
+          mat-flat-button
+          color="warn"
+          class="ms-2"
+          (click)="eliminarExamen(e.id_examen)"
+        >
+          Eliminar
+        </button>
       </mat-card-actions>
     </mat-card-content>
-</mat-card>
+  </mat-card>
 
-<div class="container text-center mt-2 mb-5">
-
-  <button mat-raised-button color="primary" class="mb-5" routerLink="/admin/add-examen">Agregar Cuestionario</button>
-</div>
+  <section class="container text-center mt-2 mb-5">
+    <button
+      mat-raised-button
+      color="primary"
+      class="mb-5"
+      routerLink="/admin/add-examen"
+    >
+      Agregar Cuestionario
+    </button>
+  </section>
+</main>

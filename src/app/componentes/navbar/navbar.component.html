@@ -1,5 +1,6 @@
+<header>
 <nav class="navbar navbar-expand-sm p-3 navbar-color">
-  <div class="container">
+  <section class="container">
     <mat-icon aria-hidden="false" class="me-2 me-md-0 text-white" aria-label="Example home icon" fontIcon="menu_books"></mat-icon>
     <a routerLink="/" class="navbar-brand text-white ms-2">Sistema de Exámenes</a>
     <button
@@ -10,7 +11,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <section class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav">
         <li class="mx-5 mx-md-2" *ngIf="loginService.isLoggedin()">
           <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="home"></mat-icon>
@@ -44,6 +45,7 @@
           <a (click)="logout()" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Cerrar Sesión</a>
         </li>
       </ul>
-    </div>
-  </div>
+    </section>
+  </section>
 </nav>
+</header>

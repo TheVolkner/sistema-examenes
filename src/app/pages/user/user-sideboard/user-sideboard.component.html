@@ -1,11 +1,17 @@
-<mat-card>
-  <mat-action-list>
-    <mat-card-subtitle class="p-3">Categorías Disponibles</mat-card-subtitle>
-    <button mat-list-item [routerLink]="['/user-dashboard/categoria/0']">
-      <mat-icon mat-list-icon>quiz</mat-icon> Exámenes
-    </button>
-    <button mat-list-item *ngFor="let categoria of categorias" [routerLink]="['/user-dashboard/categoria',categoria.id_categoria]">
-      <mat-icon mat-list-icon>account_circle</mat-icon> {{categoria.titulo}}
-    </button>
-  </mat-action-list>
-</mat-card>
+<main>
+  <mat-card>
+    <mat-action-list>
+      <mat-card-subtitle class="p-3">Categorías Disponibles</mat-card-subtitle>
+      <button mat-list-item [routerLink]="['/user-dashboard/categoria/0']">
+        <mat-icon mat-list-icon>quiz</mat-icon> Exámenes
+      </button>
+      <button
+        mat-list-item
+        *ngFor="let categoria of categorias"
+        [routerLink]="['/user-dashboard/categoria', categoria.id_categoria]"
+      >
+        <mat-icon mat-list-icon>account_circle</mat-icon> {{ categoria.titulo }}
+      </button>
+    </mat-action-list>
+  </mat-card>
+</main>

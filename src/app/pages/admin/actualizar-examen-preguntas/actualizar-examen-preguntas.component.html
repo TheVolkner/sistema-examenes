@@ -1,94 +1,132 @@
-<mat-card>
-  <mat-card-content>
-    <h1>Actualizar pregunta de cuestionario {{titulo}}</h1>
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <form #f="ngForm" (submit)="f.form.valid && enviarForm()" >
-          <mat-form-field class="w-100" appearance="fill">
-            <mat-label>Contenido</mat-label>
-            <input
-              type="text"
-              name="contenido"
-              [(ngModel)]="pregunta.contenido"
-              placeholder="Digite el contenido de la pregunta"
-              required
-              matInput
-            />
-          </mat-form-field>
-          <div class="row">
-            <div class="col-md-6">
-              <mat-form-field class="w-100" appearance="fill">
-                <mat-label>Opción 1</mat-label>
-                <input
-                  type="text"
-                  name="opcion1"
-                  [(ngModel)]="pregunta.opcion1"
-                  placeholder="Digite la opcion 1 de la pregunta"
-                  required
-                  matInput
-                />
-              </mat-form-field>
-            </div>
-            <div class="col-md-6">
-              <mat-form-field class="w-100" appearance="fill">
-                <mat-label>Opción 2</mat-label>
-                <input
-                  type="text"
-                  [(ngModel)]="pregunta.opcion2"
-                  name="opcion2"
-                  placeholder="Digite la opción 2 de la pregunta"
-                  required
-                  matInput
-                />
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <mat-form-field class="w-100" appearance="fill">
-                <mat-label>Opción 3</mat-label>
-                <input
-                  type="text"
-                  name="opcion3"
-                  [(ngModel)]="pregunta.opcion3"
-                  placeholder="Digite la opción 3 de la pregunta"
-                  required
-                  matInput
-                />
-              </mat-form-field>
-            </div>
-            <div class="col-md-6">
-              <mat-form-field class="w-100" appearance="fill">
-                <mat-label>Opción 4</mat-label>
-                <input
-                  type="text"
-                  [(ngModel)]="pregunta.opcion4"
-                  name="numeroDePreguntas"
-                  placeholder="Digite la opción 4"
-                  required
-                  matInput
-                />
-              </mat-form-field>
-            </div>
+<main>
+  <mat-card>
+    <mat-card-content>
+      <h1>Actualizar pregunta de cuestionario {{ titulo }}</h1>
+      <section class="row">
+        <article class="col-md-8 offset-md-2">
+          <form #f="ngForm" (submit)="f.form.valid && enviarForm()">
             <mat-form-field class="w-100" appearance="fill">
-              <mat-label>Respuesta</mat-label>
-              <mat-select name="respuesta" [(ngModel)]="pregunta.respuesta"
-              placeholder="Indique la respuesta a la pregunta" required>
-                <mat-option *ngIf="pregunta.opcion1" [value]="pregunta.opcion1">{{pregunta.opcion1}}</mat-option>
-                <mat-option *ngIf="pregunta.opcion2"[value]="pregunta.opcion2">{{pregunta.opcion2}}</mat-option>
-                <mat-option *ngIf="pregunta.opcion3"[value]="pregunta.opcion3">{{pregunta.opcion3}}</mat-option>
-                <mat-option *ngIf="pregunta.opcion4" [value]="pregunta.opcion4">{{pregunta.opcion4}}</mat-option>
-              </mat-select>
-              <mat-hint>¡Recuerde llenar los campos de las preguntas antes de indicar la respuesta!</mat-hint>
+              <mat-label>Contenido</mat-label>
+              <input
+                type="text"
+                name="contenido"
+                [(ngModel)]="pregunta.contenido"
+                placeholder="Digite el contenido de la pregunta"
+                required
+                matInput
+              />
             </mat-form-field>
-            <div class="container text-center mb-5 mt-4">
-               <button mat-raised-button color="primary" class="mb-5" (click)="checkForm(f)">Guardar</button>
-               <button mat-raised-button color="primary" class="ms-2 mb-5" [routerLink]="['/admin/ver-preguntas',id_examen,titulo]">Regresar</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
-
+            <section class="row">
+              <article class="col-md-6">
+                <mat-form-field class="w-100" appearance="fill">
+                  <mat-label>Opción 1</mat-label>
+                  <input
+                    type="text"
+                    name="opcion1"
+                    [(ngModel)]="pregunta.opcion1"
+                    placeholder="Digite la opcion 1 de la pregunta"
+                    required
+                    matInput
+                  />
+                </mat-form-field>
+              </article>
+              <article class="col-md-6">
+                <mat-form-field class="w-100" appearance="fill">
+                  <mat-label>Opción 2</mat-label>
+                  <input
+                    type="text"
+                    [(ngModel)]="pregunta.opcion2"
+                    name="opcion2"
+                    placeholder="Digite la opción 2 de la pregunta"
+                    required
+                    matInput
+                  />
+                </mat-form-field>
+              </article>
+            </section>
+            <section class="row">
+              <article class="col-md-6">
+                <mat-form-field class="w-100" appearance="fill">
+                  <mat-label>Opción 3</mat-label>
+                  <input
+                    type="text"
+                    name="opcion3"
+                    [(ngModel)]="pregunta.opcion3"
+                    placeholder="Digite la opción 3 de la pregunta"
+                    required
+                    matInput
+                  />
+                </mat-form-field>
+              </article>
+              <article class="col-md-6">
+                <mat-form-field class="w-100" appearance="fill">
+                  <mat-label>Opción 4</mat-label>
+                  <input
+                    type="text"
+                    [(ngModel)]="pregunta.opcion4"
+                    name="numeroDePreguntas"
+                    placeholder="Digite la opción 4"
+                    required
+                    matInput
+                  />
+                </mat-form-field>
+              </article>
+              <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Respuesta</mat-label>
+                <mat-select
+                  name="respuesta"
+                  [(ngModel)]="pregunta.respuesta"
+                  placeholder="Indique la respuesta a la pregunta"
+                  required
+                >
+                  <mat-option
+                    *ngIf="pregunta.opcion1"
+                    [value]="pregunta.opcion1"
+                    >{{ pregunta.opcion1 }}</mat-option
+                  >
+                  <mat-option
+                    *ngIf="pregunta.opcion2"
+                    [value]="pregunta.opcion2"
+                    >{{ pregunta.opcion2 }}</mat-option
+                  >
+                  <mat-option
+                    *ngIf="pregunta.opcion3"
+                    [value]="pregunta.opcion3"
+                    >{{ pregunta.opcion3 }}</mat-option
+                  >
+                  <mat-option
+                    *ngIf="pregunta.opcion4"
+                    [value]="pregunta.opcion4"
+                    >{{ pregunta.opcion4 }}</mat-option
+                  >
+                </mat-select>
+                <mat-hint
+                  >¡Recuerde llenar los campos de las preguntas antes de indicar
+                  la respuesta!</mat-hint
+                >
+              </mat-form-field>
+              <section class="container text-center mb-5 mt-4">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="mb-5"
+                  (click)="checkForm(f)"
+                >
+                  Guardar
+                </button>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="ms-2 mb-5"
+                  [routerLink]="['/admin/ver-preguntas', id_examen, titulo]"
+                >
+                  Regresar
+                </button>
+              </section>
+            </section>
+          </form>
+        </article>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</main>
