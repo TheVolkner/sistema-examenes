@@ -1,7 +1,7 @@
-<main class="container-fluid mb-5">
+<section class="container-fluid mb-5">
   <h1>Examenes disponibles:</h1>
-  <article class="row mt-2" *ngIf="examenes">
-      <section class="col-md-6" *ngFor="let e of examenes">
+  <div class="row mt-2" *ngIf="examenes">
+      <div class="col-md-6" *ngFor="let e of examenes">
         <!--CADA EXÁMEN SE COMPRUEBA SI ESTÁ ACTIVO ANTES DE DESPLEGARGLO-->
         <mat-card class="mb-5">
           <mat-card-header>
@@ -29,13 +29,13 @@
             <button mat-button color="accent">Puntos: {{e.puntos_maximos}}</button>
           </mat-card-actions>
         </mat-card>
-      </section>
-      <section class="col-md-12 mb-5" *ngIf="examenes.length == 0">
+      </div>
+      <div class="col-md-12 mb-5" *ngIf="examenes.length == 0">
         <mat-card>
           <mat-card-content>
             <h4>No hay exámenes en esta categoría</h4>
           </mat-card-content>
         </mat-card>
-      </section>
-  </article>
-</main>
+      </div>
+  </div>
+</section>

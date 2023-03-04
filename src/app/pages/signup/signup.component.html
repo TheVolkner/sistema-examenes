@@ -1,8 +1,8 @@
 <!--ESTILOS CON BOOTSTRAP-->
-<main class="bootstrap-wrapper">
-  <section class="container mt-1 w-75">
-    <article class="row">
-      <section class="col-md-6 offset-md-3">
+<section class="bootstrap-wrapper">
+  <div class="container mt-1 w-75">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
         <!--HEADER DE FORMULARIO CON FOTO DE PERFIL-->
         <figure class="container text-center">
           <img
@@ -14,15 +14,15 @@
         <h1 class="text-center">
           <p class="fw-bolder fs-4">Registrate aquí</p>
         </h1>
-      </section>
-    </article>
+      </div>
+    </div>
     <form #f="ngForm" (ngSubmit)="f.form.valid && validarForm(f)">
-      <article class="row">
+      <div class="row">
         <!--FORMULARIO PARA REGISTRAR USUARIO-->
         <!--TRABAJAR CON GRID PARA INDICARLE TAMAÑO RESPONSIVE A CADA COLUMNA, COMENZANDO POR EL DISEÑO MOBILE FIRST,
         CADA COLUMNA CUBRE LOS 12 ESPACIOS PARA CADA ELEMENTO, Y LUEGO EN EL BREAKPOINT DE MEDIUM, LO DIVIDIMOS DE A 2 ELEMENTOS
         CADA 6 ESPACIOS-->
-        <section class="col-12 col-md-6 text-center">
+        <div class="col-12 col-md-6 text-center">
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>Usuario</mat-label>
             <input
@@ -34,8 +34,8 @@
             />
             <mat-hint>El username debe ser único.</mat-hint>
           </mat-form-field>
-        </section>
-        <section class="col-12 col-md-6 text-center">
+        </div>
+        <div class="col-12 col-md-6 text-center">
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>Contraseña</mat-label>
             <input
@@ -52,8 +52,8 @@
               >La contraseña debe tener entre 6 y 16 carácteres.</mat-hint
             >
           </mat-form-field>
-        </section>
-        <section class="col-12 col-md-6 text-center">
+        </div>
+        <div class="col-12 col-md-6 text-center">
           <p>
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Nombre</mat-label>
@@ -66,8 +66,8 @@
               />
             </mat-form-field>
           </p>
-        </section>
-        <section class="col-12 col-md-6 text-center">
+        </div>
+        <div class="col-12 col-md-6 text-center">
           <p>
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Apellido</mat-label>
@@ -80,8 +80,8 @@
               />
             </mat-form-field>
           </p>
-        </section>
-        <section class="col-12 col-md-6 text-center">
+        </div>
+        <div class="col-12 col-md-6 text-center">
           <p>
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Email</mat-label>
@@ -96,8 +96,8 @@
               />
             </mat-form-field>
           </p>
-        </section>
-        <section class="col-12 col-md-6 text-center">
+        </div>
+        <div class="col-12 col-md-6 text-center">
           <p>
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Teléfono</mat-label>
@@ -111,8 +111,8 @@
               />
             </mat-form-field>
           </p>
-        </section>
-        <section class="col-12 col-md-6 d-grid gap-2 mx-auto">
+        </div>
+        <div class="col-12 col-md-6 d-grid gap-2 mx-auto">
           <button
             mat-raised-button
             class="mb-md-2"
@@ -121,8 +121,8 @@
           >
             Registrar
           </button>
-        </section>
-        <section class="col-12 col-md-6 d-grid gap-2 mx-auto my-4 my-md-0 mb-5">
+        </div>
+        <div class="col-12 col-md-6 d-grid gap-2 mx-auto my-4 my-md-0 mb-5">
           <button
             mat-raised-button
             color="accent"
@@ -131,8 +131,8 @@
           >
             Limpiar
           </button>
-        </section>
-      </article>
+        </div>
+      </div>
     </form>
-  </section>
-</main>
+  </div>
+</section>

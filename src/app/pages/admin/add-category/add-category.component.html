@@ -1,12 +1,12 @@
-<main>
+<section>
   <mat-card style="min-height: 100vh">
     <h1>Agregar nueva categoría</h1>
     <mat-card-content>
-      <section class="container w-100">
-        <article class="row">
-          <section class="col-md-8 offset-md-2">
+      <div class="container w-100">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
             <form #f="ngForm" (ngSubmit)="f.form.valid && formSubmit(f)">
-              <section class="col-md-12 mb-2">
+              <div class="col-md-12 mb-2">
                 <mat-form-field class="w-100" appearance="outline">
                   <mat-label>Titulo</mat-label>
                   <input
@@ -20,8 +20,8 @@
                   />
                   <mat-hint>El título es requerido.</mat-hint>
                 </mat-form-field>
-              </section>
-              <section class="col-md-12 mb-2">
+              </div>
+              <div class="col-md-12 mb-2">
                 <mat-form-field class="w-100" appearance="outline">
                   <mat-label>Descripción</mat-label>
                   <textarea
@@ -35,8 +35,8 @@
                   </textarea>
                   <mat-hint>La descripción es requerida.</mat-hint>
                 </mat-form-field>
-              </section>
-              <section class="container text-center mt15">
+              </div>
+              <div class="container text-center mt15">
                 <button
                   (click)="checkForm(f)"
                   mat-raised-button
@@ -52,11 +52,11 @@
                 >
                   Regresar
                 </button>
-              </section>
+              </div>
             </form>
-          </section>
-        </article>
-      </section>
+          </div>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
-</main>
+</section>

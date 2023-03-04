@@ -1,11 +1,11 @@
 <!--ESTILOS CON BOOTSTRAP-->
 
-<main class="container mt-1">
-  <article class="row">
-    <section class="col-12 text-center fw-bold mb-1">
+<section class="container mt-1">
+  <div class="row">
+    <div class="col-12 text-center fw-bold mb-1">
       <h1 class="text-center"> <p class="fw-bolder fs-4"> Inicia Sesión</p></h1>
-    </section>
-    <section class="col-12 text-center mx-auto mt-2">
+    </div>
+    <div class="col-12 text-center mx-auto mt-2">
       <!--HEADER DE FORMULARIO CON FOTO DE PERFIL-->
       <img
         src="../../../assets/tableta-grafica.png"
@@ -20,10 +20,10 @@
           CADA COLUMNA CUBRE LOS 12 ESPACIOS PARA CADA ELEMENTO, Y LUEGO EN EL BREAKPOINT DE MEDIUM, LO DIVIDIMOS DE A 2 ELEMENTOS
           CADA 6 ESPACIOS-->
 
-        <article class="row">
-          <section class="col-sm-12 col-lg-6">
-            <article class="row">
-              <section class="col-12">
+        <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <div class="row">
+              <div class="col-12">
                 <mat-form-field appearance="outline" class="w-100">
                   <mat-label>Usuario</mat-label>
                   <input
@@ -35,8 +35,8 @@
                   />
                   <mat-hint>El username debe ser único.</mat-hint>
                 </mat-form-field>
-              </section>
-              <section class="col-12">
+              </div>
+              <div class="col-12">
                 <mat-form-field appearance="outline"  class="w-100">
                   <mat-label>Contraseña</mat-label>
                   <input
@@ -53,17 +53,17 @@
                     >La contraseña debe tener entre 6 y 16 carácteres.</mat-hint
                   >
                 </mat-form-field>
-              </section>
-            </article>
-          </section>
-          <section class="mx-auto w-50">
-            <article class="row">
-            <section class="col-sm-12 col-lg-12 mt-2 d-grid gap-2">
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto w-50">
+            <div class="row">
+            <div class="col-sm-12 col-lg-12 mt-2 d-grid gap-2">
               <button mat-raised-button (click)="checkForm(f)" color="primary"  class="p-4 mb-2">
                 Iniciar Sesión
               </button>
-            </section>
-              <section class="col-sm-12 col-lg-12 my-2 text-center d-grid gap-2 mb-5">
+            </div>
+              <div class="col-sm-12 col-lg-12 my-2 text-center d-grid gap-2 mb-5">
                 <button
                 class="p-4 mb-5"
                   mat-raised-button
@@ -73,11 +73,11 @@
                 >
                   ¡Registrate aquí!
                 </button>
-            </section>
-          </article>
-        </section>
-      </article>
+            </div>
+          </div>
+        </div>
+      </div>
       </form>
-    </section>
-  </article>
-</main>
+    </div>
+  </div>
+</section>

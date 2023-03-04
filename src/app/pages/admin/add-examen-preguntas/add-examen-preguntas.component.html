@@ -1,9 +1,9 @@
-<main>
+<section>
   <mat-card>
     <mat-card-content>
       <h1>Agregar pregunta al cuestionario {{ titulo }}</h1>
-      <article class="row">
-        <section class="col-md-8 offset-md-2">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
           <form #f="ngForm" (submit)="f.form.valid && enviarForm()">
             <mat-form-field class="w-100" appearance="fill">
               <mat-label>Contenido</mat-label>
@@ -16,8 +16,8 @@
                 matInput
               />
             </mat-form-field>
-            <article class="row">
-              <section class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
                 <mat-form-field class="w-100" appearance="fill">
                   <mat-label>Opción 1</mat-label>
                   <input
@@ -29,8 +29,8 @@
                     matInput
                   />
                 </mat-form-field>
-              </section>
-              <section class="col-md-6">
+              </div>
+              <div class="col-md-6">
                 <mat-form-field class="w-100" appearance="fill">
                   <mat-label>Opción 2</mat-label>
                   <input
@@ -42,10 +42,10 @@
                     matInput
                   />
                 </mat-form-field>
-              </section>
-            </article>
-            <article class="row">
-              <section class="col-md-6">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
                 <mat-form-field class="w-100" appearance="fill">
                   <mat-label>Opción 3</mat-label>
                   <input
@@ -57,8 +57,8 @@
                     matInput
                   />
                 </mat-form-field>
-              </section>
-              <section class="col-md-6">
+              </div>
+              <div class="col-md-6">
                 <mat-form-field class="w-100" appearance="fill">
                   <mat-label>Opción 4</mat-label>
                   <input
@@ -70,7 +70,7 @@
                     matInput
                   />
                 </mat-form-field>
-              </section>
+              </div>
               <mat-form-field class="w-100" appearance="fill">
                 <mat-label>Respuesta</mat-label>
                 <mat-select
@@ -105,7 +105,7 @@
                   la respuesta!</mat-hint
                 >
               </mat-form-field>
-              <section class="container text-center mt-2 mb-5">
+              <div class="container text-center mt-2 mb-5">
                 <button
                   mat-raised-button
                   color="primary"
@@ -122,11 +122,11 @@
                 >
                   Regresar
                 </button>
-              </section>
-            </article>
+              </div>
+            </div>
           </form>
-        </section>
-      </article>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
-</main>
+</section>

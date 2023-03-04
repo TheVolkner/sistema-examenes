@@ -1,6 +1,6 @@
-<main class="container-fluid" *ngIf="enviado == false">
-  <article class="row">
-    <section class="col-md-2">
+<section class="container-fluid" *ngIf="enviado == false">
+  <div class="row">
+    <div class="col-md-2">
       <!--Instrucciones-->
       <mat-card class="mt-2">
       <mat-card-content>
@@ -14,8 +14,8 @@
         <li>No minimices la ventana</li>
       </mat-card-content>
       </mat-card>
-    </section>
-    <section class="col-md-8">
+    </div>
+    <div class="col-md-8">
       <!--Preguntas-->
       <ng-container *ngIf="preguntas">
         <h1 class="mt-2">
@@ -32,41 +32,41 @@
             }}</span>
           </p>
           <mat-divider></mat-divider>
-          <article class="row mt-2">
-            <section class="col-md-7 mt-2">
+          <div class="row mt-2">
+            <div class="col-md-7 mt-2">
               <!--CUANDO ESTEMOS ITERANDO LAS PREGUNTAS, VINCULAMOS LOS RADIO BUTTON POR SU NOMBRE QUE ES EL INDICE
               ITERADO EN ESTA VUELTA, Y LE ASIGNAMOS A CADA UNA EL VALOR DE LA OPCIÓN-->
               <input type="radio" class="me-1" name={{i}} [(ngModel)]="pregunta.respuestaDada"  [value]="pregunta.opcion1" />{{
                 pregunta.opcion1
               }}
-            </section>
-            <section class="col-md-7 mt-2">
+            </div>
+            <div class="col-md-7 mt-2">
               <input type="radio"  class="me-1"  name={{i}} [(ngModel)]="pregunta.respuestaDada" [value]="pregunta.opcion2" />{{
                 pregunta.opcion2
               }}
-            </section>
-            <section class="col-md-7 mt-2">
+            </div>
+            <div class="col-md-7 mt-2">
               <input type="radio" class="me-1"  name={{i}} [(ngModel)]="pregunta.respuestaDada" [value]="pregunta.opcion3" />{{
                 pregunta.opcion3
               }}
-            </section>
-            <section class="col-md-7 mt-2">
+            </div>
+            <div class="col-md-7 mt-2">
               <input type="radio"  class="me-1" name={{i}} [(ngModel)]="pregunta.respuestaDada" [value]="pregunta.opcion4" />{{
                 pregunta.opcion4
               }}
-            </section>
-          </article>
-          <article class="row">
-            <section class="col-md-6"></section>
-            <section class="col-md-6"></section>
-          </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6"></div>
+          </div>
         </mat-card-content>
       </mat-card>
-      <section class="container text-center mt-2 mb-md-5">
+      <div class="container text-center mt-2 mb-md-5">
         <button mat-raised-button color="primary" class="mb-5" (click)="enviarCuestionario()">Enviar Cuestionario</button>
-      </section>
-    </section>
-    <section class="col-md-2 mb-5 mt-0">
+      </div>
+    </div>
+    <div class="col-md-2 mb-5 mt-0">
       <!--BARRA DE PROGRESO-->
       <mat-card class="mt-5">
          <mat-card-header>
@@ -84,12 +84,12 @@
          </mat-card-content>
       </mat-card>
 
-    </section>
-  </article>
-</main>
-<section class="container-fluid" *ngIf="enviado == true">
-  <article class="row mt-2">
-    <section class="col-md-6 offset-md-3">
+    </div>
+  </div>
+</section>
+<div class="container-fluid" *ngIf="enviado == true">
+  <div class="row mt-2">
+    <div class="col-md-6 offset-md-3">
       <mat-card>
         <mat-card-header>
           <mat-card-title class="mb-2">
@@ -105,6 +105,6 @@
          <button mat-raised-button color="accent" class="ms-2" [routerLink]="['/user-dashboard/categoria/0']">Inicio</button>
         </mat-card-actions>
       </mat-card>
-    </section>
-  </article>
-</section>
+    </div>
+  </div>
+</div>

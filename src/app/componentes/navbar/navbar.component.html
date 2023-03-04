@@ -1,51 +1,107 @@
 <header>
-<nav class="navbar navbar-expand-sm p-3 navbar-color">
-  <section class="container">
-    <mat-icon aria-hidden="false" class="me-lg-2 me-md-0 text-white" aria-label="Example home icon" fontIcon="menu_books"></mat-icon>
-    <a routerLink="/" class="navbar-brand text-white ms-lg-2">Sistema de Exámenes</a>
-    <button
-      class="navbar-toggler"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarCollapse"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-sm p-3 navbar-color">
+    <div class="container">
+      <mat-icon
+        aria-hidden="false"
+        class="me-lg-2 me-md-0 text-white"
+        aria-label="Example home icon"
+        fontIcon="menu_books"
+      ></mat-icon>
+      <a routerLink="/" class="navbar-brand text-white ms-lg-2"
+        >Sistema de Exámenes</a
+      >
+      <button
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <section class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav">
-        <li class="mx-5 mx-md-2" *ngIf="loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="home"></mat-icon>
-          <a routerLink="/"  mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Inicio</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto">
-        <li class="ms-5" *ngIf="loginService.isLoggedin()">
-            <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="person"></mat-icon>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="mx-5 mx-md-2" *ngIf="loginService.isLoggedin()">
+            <mat-icon
+              aria-hidden="false"
+              class="pt-1 text-white"
+              aria-label="Example home icon"
+              fontIcon="home"
+            ></mat-icon>
+            <a
+              routerLink="/"
+              mat-button
+              class="text-white ms-1 fs-6"
+              style="text-decoration: none"
+              >Inicio</a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="ms-5" *ngIf="loginService.isLoggedin()">
+            <mat-icon
+              aria-hidden="false"
+              class="pt-1 text-white"
+              aria-label="Example home icon"
+              fontIcon="person"
+            ></mat-icon>
             <button
-            *ngIf = "isLoggedIn && user"
-            mat-button
-            style="margin-right: 10px"
-            class="example-icon favorite-icon"
-            aria-label="Example icon-button with heart icon"
-            [routerLink] = "'/admin/profile'"
-          >
-            <p class="text-white">{{ user.username }}</p>
-          </button>
+              *ngIf="isLoggedIn && user"
+              mat-button
+              style="margin-right: 10px"
+              class="example-icon favorite-icon"
+              aria-label="Example icon-button with heart icon"
+              [routerLink]="'/admin/profile'"
+            >
+              <p class="text-white">{{ user.username }}</p>
+            </button>
           </li>
           <li class="ms-5" *ngIf="!loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="input"></mat-icon>
-          <a routerLink="/signup" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Registrarse</a>
-        </li>
-        <li class="ms-5" *ngIf="!loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="login"></mat-icon>
-          <a routerLink="/login" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Iniciar Sesión</a>
-        </li>
-        <li class="ms-5" *ngIf="loginService.isLoggedin()">
-          <mat-icon aria-hidden="false" class="pt-1 text-white" aria-label="Example home icon" fontIcon="login"></mat-icon>
-          <a (click)="logout()" mat-button class="text-white ms-1 fs-6" style="text-decoration: none;">Cerrar Sesión</a>
-        </li>
-      </ul>
-    </section>
-  </section>
-</nav>
+            <mat-icon
+              aria-hidden="false"
+              class="pt-1 text-white"
+              aria-label="Example home icon"
+              fontIcon="input"
+            ></mat-icon>
+            <a
+              routerLink="/signup"
+              mat-button
+              class="text-white ms-1 fs-6"
+              style="text-decoration: none"
+              >Registrarse</a
+            >
+          </li>
+          <li class="ms-5" *ngIf="!loginService.isLoggedin()">
+            <mat-icon
+              aria-hidden="false"
+              class="pt-1 text-white"
+              aria-label="Example home icon"
+              fontIcon="login"
+            ></mat-icon>
+            <a
+              routerLink="/login"
+              mat-button
+              class="text-white ms-1 fs-6"
+              style="text-decoration: none"
+              >Iniciar Sesión</a
+            >
+          </li>
+          <li class="ms-5" *ngIf="loginService.isLoggedin()">
+            <mat-icon
+              aria-hidden="false"
+              class="pt-1 text-white"
+              aria-label="Example home icon"
+              fontIcon="login"
+            ></mat-icon>
+            <a
+              (click)="logout()"
+              mat-button
+              class="text-white ms-1 fs-6"
+              style="text-decoration: none"
+              >Cerrar Sesión</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
