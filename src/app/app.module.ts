@@ -60,6 +60,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,7 +87,6 @@ import { FooterComponent } from './componentes/footer/footer.component';
     InstruccionesComponent,
     StartComponent,
     FooterComponent
-
   ],
   imports: [
     BrowserModule,

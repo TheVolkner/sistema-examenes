@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit{
   //BASADO EN SI ESTÁ LOGEADO O NO.
   isLoggedIn = false;
   user:any = null;
+  userPath:string;
 
   constructor(public loginService:LoginService,
     public router:Router,
@@ -34,6 +35,15 @@ export class NavbarComponent implements OnInit{
         data => {
           this.isLoggedIn = this.loginService.isLoggedin();
           this.user = this.loginService.getUser();
+          //COMPROBAMOS SI ES UN USUARIO ADMIN O NORMAL, Y LE ASIGNAMOS EL PATH BASE PARA EL BOTÓN DE PROFILE
+          if(this.loginService.getUserRoles() == 'ADMIN'){
+            this.userPath = '/admin/profile';
+          } else if(this.loginService.getUserRoles() == 'USER'){
+            this.userPath = '/user-dashboard/profile';
+          } else {
+            this.userPath = '';
+          }
+          console.log('Path de profile: ' + this.userPath);
           console.log('Sesión:' + this.isLoggedIn + ", Usuario: " + this.user.username);
         }
       )

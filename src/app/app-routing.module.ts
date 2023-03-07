@@ -39,6 +39,7 @@ const routes: Routes = [
     {path:'add-pregunta/:id_examen/:titulo',component:AddExamenPreguntasComponent}
   ]},
   {path:'user-dashboard',component:UserDashboardComponent, canActivate:[NormalGuard],children:[
+    {path:'profile',component:ProfileComponent},
     {path:'categoria/:categoria_id',component:LoadExamenComponent},
     {path:'instrucciones/:id_examen',component:InstruccionesComponent},
   ]},
